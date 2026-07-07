@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WaveBoard — Soundboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== TOP BAR ===================== -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">◈</span>
+      <span class="brand-name">WaveBoard</span>
+    </div>
+    <p class="brand-tag">a soundboard, played like a playlist</p>
+  </header>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main class="content">
+    <section class="section-heading">
+      <h1>Your Sound Library</h1>
+      <p>Click any card to trigger it. Sounds can stack — this is a board, not a jukebox.</p>
+    </section>
+
+    <!-- Track cards are generated dynamically by script.js -->
+    <div class="track-grid" id="trackGrid" aria-live="polite"></div>
+  </main>
+
+  <!-- ===================== PERSISTENT PLAYER BAR ===================== -->
+  <footer class="player-bar">
+
+    <!-- Left: Now Playing info -->
+    <div class="player-section now-playing">
+      <div class="now-playing-art" id="nowPlayingArt">♪</div>
+      <div class="now-playing-text">
+        <span class="now-playing-title" id="nowPlayingTitle">Nothing playing</span>
+        <span class="now-playing-sub" id="nowPlayingSub">Pick a sound to get started</span>
+      </div>
+    </div>
+
+    <!-- Center: Stop All control -->
+    <div class="player-section transport">
+      <button id="stopAllBtn" class="stop-all-btn" title="Stop everything, instantly">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <rect x="5" y="5" width="14" height="14" rx="2"></rect>
+        </svg>
+        Stop All
+      </button>
+      <span class="playing-count" id="playingCount">0 sounds active</span>
+    </div>
+
+    <!-- Right: Volume -->
+    <div class="player-section volume-section">
+      <svg id="volIcon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M4 9v6h4l5 5V4L8 9H4z"></path>
+      </svg>
+      <input
+        type="range"
+        id="volumeSlider"
+        class="volume-slider"
+        min="0"
+        max="100"
+        value="80"
+        aria-label="Master volume"
+      />
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
