@@ -392,6 +392,7 @@ volumeSlider.dispatchEvent(new Event('input'));
 TRACKS.forEach((track) => {
   const card = createCard(track);
   const audio = new Audio();
+   audio.loop = true;
   players[track.id] = { audio, card, ready: false };
 
   // Reflect natural playback end (e.g. a one-shot finishing on its own)
